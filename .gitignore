@@ -1,0 +1,10 @@
+/obj
+/bin
+/linux_userspace.c
+/BME280.cbp
+/BME280.depend
+/BME280.layout
+/bme280_51.c
+/bme280_51.h
+/bme280_selftest.c
+/bme280_selftest.h
