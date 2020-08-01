@@ -240,3 +240,4 @@ int8_t bme280_compensate_data(uint8_t sensor_comp, const struct bme280_uncomp_da
 /** @}*/
 void parse_humidity_calib_data(const uint8_t *reg_data, struct bme280_dev *dev);
 void parse_temp_press_calib_data(const uint8_t *reg_data, struct bme280_dev *dev);
+void parse_calib_data(const int32_t *reg_data, struct bme280_dev *dev);

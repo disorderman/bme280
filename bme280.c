@@ -1234,6 +1234,29 @@ void parse_humidity_calib_data(const uint8_t *reg_data, struct bme280_dev *dev)
 	calib_data->dig_H6 = (int8_t)reg_data[6];
 }
 
+void parse_calib_data(const int32_t *reg_data, struct bme280_dev *dev)
+{
+    struct bme280_calib_data *calib_data = &dev->calib_data;
+    calib_data->dig_T1=(uint16_t)reg_data[0];
+    calib_data->dig_T2=(int16_t)reg_data[1];
+    calib_data->dig_T3=(int16_t)reg_data[2];
+    calib_data->dig_P1=(uint16_t)reg_data[3];
+    calib_data->dig_P2=(int16_t)reg_data[4];
+    calib_data->dig_P3=(int16_t)reg_data[5];
+    calib_data->dig_P4=(int16_t)reg_data[6];
+    calib_data->dig_P5=(int16_t)reg_data[7];
+    calib_data->dig_P6=(int16_t)reg_data[8];
+    calib_data->dig_P7=(int16_t)reg_data[9];
+    calib_data->dig_P8=(int16_t)reg_data[10];
+    calib_data->dig_P9=(int16_t)reg_data[11];
+    calib_data->dig_H1=(uint8_t)reg_data[12];
+    calib_data->dig_H2=(int16_t)reg_data[13];
+    calib_data->dig_H3=(uint8_t)reg_data[14];
+    calib_data->dig_H4=(int16_t)reg_data[15];
+    calib_data->dig_H5=(int16_t)reg_data[16];
+    calib_data->dig_H6=(int8_t)reg_data[17];
+    calib_data->t_fine=0;
+}
 /*!
  * @brief This internal API is used to identify the settings which the user
  * wants to modify in the sensor.
